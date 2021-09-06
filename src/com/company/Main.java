@@ -8,8 +8,16 @@ public class Main {
         int size = 0;
         int num;
         int[] numbers = {1, 2, 5, 16, -1, -2, 0, 32, 3, 5, 8, 23, 4};
-        int[] rez = new int[numbers.length-1];
+        // размер
+        for(int a : numbers) {
+            if (a > 0 && a % 2 == 0) {
+                size++;
+            }
+        }
+        // объявление переменной
+        int[] rez = new int[size];
         // фильтр
+        size = 0;
         for(int a : numbers) {
             if (a > 0 && a % 2 == 0) {
                 rez[size] = a;
@@ -28,8 +36,8 @@ public class Main {
         }
         // вывод на экран
         System.out.println("\n***** arrays *****\n");
-        for(int i = 0; i < size; i++) {
-            System.out.println(rez[i]);
+        for (int j : rez) {
+            System.out.println(j);
         }
         // с потоками
         System.out.println("\n***** StreamMain *****\n");
